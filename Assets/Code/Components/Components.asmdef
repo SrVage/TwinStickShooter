@@ -2,7 +2,9 @@
     "name": "Components",
     "rootNamespace": "",
     "references": [
-        "GUID:9511e66c4c9c44f27ba62e00a215e6ba"
+        "GUID:9511e66c4c9c44f27ba62e00a215e6ba",
+        "GUID:734d92eba21c94caba915361bd5ac177",
+        "GUID:d8b63aba1907145bea998dd612889d6b"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
