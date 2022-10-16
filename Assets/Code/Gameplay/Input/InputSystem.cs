@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 namespace Code.Gameplay.Input
 {
     [RequireMatchingQueriesForUpdate]
-    partial class InputSystem:SystemBase
+    internal sealed partial class InputSystem:SystemBase
     {
         private InputAction _moveAction;
         private InputAction _fireAction;
