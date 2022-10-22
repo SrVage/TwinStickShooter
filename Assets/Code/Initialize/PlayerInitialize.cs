@@ -6,14 +6,18 @@ using UnityEngine;
 
 namespace Code.Initialize
 {
-    public class PlayerInitialize:MonoBehaviour, IConvertGameObjectToEntity
+    public class PlayerInitialize:MonoBehaviour
     {
-        [SerializeField] private float _moveSpeed;
-        public void Convert(Entity entity, EntityManager dstManager, GameObjectConversionSystem conversionSystem)
+        [SerializeField] public float _moveSpeed;
+    }
+
+    public class PlayerBaker : Baker<PlayerInitialize>
+    {
+        public override void Bake(PlayerInitialize authoring)
         {
-            dstManager.AddComponentData(entity, new PlayerTag());
-            dstManager.AddComponentData(entity, new Movement {Speed = _moveSpeed});
-            dstManager.AddComponentData(entity, new CharacterInputData());
+            AddComponent(new PlayerTag());
+            AddComponent(new Movement {Speed = authoring._moveSpeed});
+            AddComponent(new CharacterInputData());
         }
     }
 }
